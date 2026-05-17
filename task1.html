@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfolio of Kishore - Web Developer">
+  <meta name="keywords" content="Portfolio, Web Developer, HTML5, Accessibility">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kishore's Portfolio</title>
+</head>
+<body>
+  <header role="banner">
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section id="about">
+      <h1>About Me</h1>
+      <article>
+        <p>Hello! I’m Kishore, a web developer passionate about accessibility and design.</p>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article>
+        <h3>Portfolio Website</h3>
+        <p>A fully accessible, semantic HTML5 portfolio site.</p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form aria-label="Contact Form">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" required>
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Kishore. All rights reserved.</p>
+  </footer>
+</body>
+</html>
