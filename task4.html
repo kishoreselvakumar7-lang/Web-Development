@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(to right,#4facfe,#00f2fe);
+    }
+
+    .container{
+      width:400px;
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    .search-box{
+      display:flex;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .search-box input{
+      flex:1;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      outline:none;
+    }
+
+    .search-box button{
+      padding:10px 15px;
+      background:#007bff;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+    .search-box button:hover{
+      background:#0056b3;
+    }
+
+    .weather-card{
+      display:none;
+      margin-top:20px;
+      background:#f4f4f4;
+      padding:20px;
+      border-radius:10px;
+    }
+
+    .weather-card p{
+      margin:10px 0;
+      font-size:18px;
+    }
+
+    .error{
+      color:red;
+      margin-top:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Weather Dashboard</h1>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name">
+      <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="error" id="error"></div>
+
+    <div class="weather-card" id="weatherCard">
+      <h2 id="cityName"></h2>
+      <p id="temperature"></p>
+      <p id="humidity"></p>
+      <p id="windSpeed"></p>
+      <p id="condition"></p>
+    </div>
+
+  </div>
+
+  <script>
+
+    // Local weather data without API
+
+    const weatherData = {
+
+      chennai: {
+        temperature: "34°C",
+        humidity: "70%",
+        wind: "12 km/h",
+        condition: "Sunny"
+      },
+
+      madurai: {
+        temperature: "36°C",
+        humidity: "60%",
+        wind: "10 km/h",
+        condition: "Hot"
+      },
+
+      delhi: {
+        temperature: "30°C",
+        humidity: "50%",
+        wind: "8 km/h",
+        condition: "Cloudy"
+      },
+
+      mumbai: {
+        temperature: "28°C",
+        humidity: "80%",
+        wind: "15 km/h",
+        condition: "Rainy"
+      }
+
+    };
+
+    function getWeather(){
+
+      const city = document.getElementById("cityInput")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+      const errorDiv = document.getElementById("error");
+
+      const weatherCard = document.getElementById("weatherCard");
+
+      errorDiv.textContent = "";
+      weatherCard.style.display = "none";
+
+      if(city === ""){
+        errorDiv.textContent = "Please enter city name";
+        return;
+      }
+
+      if(weatherData[city]){
+
+        const data = weatherData[city];
+
+        document.getElementById("cityName").textContent =
+          city.toUpperCase();
+
+        document.getElementById("temperature").textContent =
+          "Temperature: " + data.temperature;
+
+        document.getElementById("humidity").textContent =
+          "Humidity: " + data.humidity;
+
+        document.getElementById("windSpeed").textContent =
+          "Wind Speed: " + data.wind;
+
+        document.getElementById("condition").textContent =
+          "Condition: " + data.condition;
+
+        weatherCard.style.display = "block";
+
+      } else {
+
+        errorDiv.textContent = "City not found";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
