@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>E-Commerce Product Catalog</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+    }
+
+
+    nav{
+      background:#222;
+      color:white;
+      padding:15px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav h1{
+      font-size:28px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+    }
+
+    nav ul li{
+      cursor:pointer;
+    }
+
+
+    .hero{
+      height:300px;
+      background:linear-gradient(to right,#4facfe,#00f2fe);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+      flex-direction:column;
+    }
+
+    .hero h2{
+      font-size:40px;
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      font-size:20px;
+    }
+
+
+    .products{
+      padding:40px;
+    }
+
+    .products h2{
+      text-align:center;
+      margin-bottom:30px;
+      color:#333;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .product-card{
+      background:white;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:15px;
+    }
+
+    .product-info h3{
+      margin-bottom:10px;
+      color:#222;
+    }
+
+    .product-info p{
+      margin-bottom:10px;
+      color:#555;
+    }
+
+    .price{
+      color:green;
+      font-size:20px;
+      font-weight:bold;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 15px;
+      background:#007bff;
+      color:white;
+      text-decoration:none;
+      border-radius:5px;
+    }
+
+    .btn:hover{
+      background:#0056b3;
+    }
+
+
+    footer{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:15px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .hero h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <nav>
+
+    <h1>ShopEasy</h1>
+
+    <ul>
+      <li>Home</li>
+      <li>Products</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+
+  </nav>
+
+
+  <section class="hero">
+
+    <h2>Modern E-Commerce Store</h2>
+
+    <p>Buy Trending Products Online</p>
+
+  </section>
+
+
+  <section class="products">
+
+    <h2>Featured Products</h2>
+
+    <div class="product-grid">
+
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Shoes">
+
+        <div class="product-info">
+
+          <h3>Running Shoes</h3>
+
+          <p>Comfortable and stylish sports shoes.</p>
+
+          <div class="price">₹1999</div>
+
+          <a href="#" class="btn">Add to Cart</a>
+
+        </div>
+
+    </div>
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
+
+        <div class="product-info">
+
+          <h3>Smart Watch</h3>
+
+          <p>Track fitness and notifications easily.</p>
+
+          <div class="price">₹3499</div>
+
+          <a href="#" class="btn">Add to Cart</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Phone">
+
+        <div class="product-info">
+
+          <h3>Smart Phone</h3>
+
+          <p>Latest mobile with high performance.</p>
+
+          <div class="price">₹24999</div>
+
+          <a href="#" class="btn">Add to Cart</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Headphones">
+
+        <div class="product-info">
+
+          <h3>Wireless Headphones</h3>
+
+          <p>Enjoy crystal clear sound quality.</p>
+
+          <div class="price">₹1499</div>
+
+          <a href="#" class="btn">Add to Cart</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>© 2026 ShopEasy | Full Stack Project</p>
+
+  </footer>
+
+</body>
+</html>
